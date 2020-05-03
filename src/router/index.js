@@ -1,14 +1,28 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from "vue"
+import VueRouter from "vue-router"
+import VacationOverview from "@/views/VacationOverview.vue"
+import VacationShow from "@/views/VacationShow.vue"
+import VacationCreate from "@/views/VacationCreate.vue"
+Vue.use(VueRouter)
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "VacationOverview",
+    component: VacationOverview
+  },
+  {
+    path: "/VacationCreate",
+    name: "VacationCreate",
+    component: VacationCreate
+  },
+  {
+    path: "/VacationShow/:id",
+    name: "VacationShow",
+    component: VacationShow,
+    props: true
   },
   {
     path: "/about",
