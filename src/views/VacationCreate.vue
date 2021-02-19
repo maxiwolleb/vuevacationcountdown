@@ -2,45 +2,26 @@
   <div>
     <v-container fluid>
       <v-text-field label="Vacation location?"></v-text-field>
-      <template>
-        <v-row>
-          <v-col cols="12" sm="6" md="4">
-            <v-menu
-              ref="menu"
-              v-model="menu"
-              :close-on-content-click="false"
-              :return-value.sync="date"
-              transition="scale-transition"
-              offset-y
-              min-width="auto"
-            >
-              <v-text-field
-                slot="activator"
-                v-model="date"
-                label="Picker in menu"
-                prepend-icon="mdi-calendar"
-                readonly
-              ></v-text-field>
-              <v-date-picker v-model="date" no-title scrollable>
-                <template slot-scope="{ save, cancel }">
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn flat color="primary" @click="cancel">Cancel</v-btn>
-                    <v-btn flat color="primary" @click="save">OK</v-btn>
-                  </v-card-actions>
-                </template>
-                <!-- <v-spacer></v-spacer>
-                <v-btn text color="primary" @click="menu = false">
-                  Cancel
-                </v-btn>
-                <v-btn text color="primary" @click="$refs.menu.save(date)">
-                  OK
-                </v-btn> -->
-              </v-date-picker>
-            </v-menu>
-          </v-col>
-        </v-row>
-      </template>
+      <v-menu
+        v-model="menu2"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        transition="scale-transition"
+        offset-y
+        min-width="auto"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            v-model="date"
+            label="Picker without buttons"
+            prepend-icon="mdi-calendar"
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+      </v-menu>
     </v-container>
   </div>
 </template>
