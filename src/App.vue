@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'VacationOverview' }">Overview</router-link>
-      <router-link :to="{ name: 'VacationCreate' }"> Create </router-link>
-    </div>
     <router-view />
   </div>
 </template>

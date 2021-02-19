@@ -10,30 +10,30 @@ const routes = [
   {
     path: "/",
     name: "VacationOverview",
-    component: VacationOverview
+    component: VacationOverview,
   },
   {
-    path: "/VacationCreate",
+    path: "/create",
     name: "VacationCreate",
-    component: VacationCreate
+    component: VacationCreate,
   },
   {
     path: "/VacationShow/:id",
     name: "VacationShow",
     component: VacationShow,
-    props: true
+    props: true,
   },
   {
     path: "*",
     name: "error",
-    component: error
-  }
+    component: error,
+  },
 ]
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router

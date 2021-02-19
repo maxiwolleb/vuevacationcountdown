@@ -1,46 +1,48 @@
 <template>
-  <div class="space">
-    <div class="star star1"></div>
-    <div class="star star2"></div>
-    <div class="star star3"></div>
-    <div class="star star4"></div>
-    <div class="star star5"></div>
-    <div class="star star6"></div>
-    <div class="star star7"></div>
+  <div class="black">
+    <div class="space">
+      <div class="star star1"></div>
+      <div class="star star2"></div>
+      <div class="star star3"></div>
+      <div class="star star4"></div>
+      <div class="star star5"></div>
+      <div class="star star6"></div>
+      <div class="star star7"></div>
 
-    <div class="error">
-      <div class="error__title">404</div>
-      <div class="error__subtitle">...</div>
-      <div class="error__description">
-        It looks like you are on the wrong path
-      </div>
-    </div>
-
-    <div class="astronaut">
-      <div class="astronaut__backpack"></div>
-      <div class="astronaut__body"></div>
-      <div class="astronaut__body__chest"></div>
-      <div class="astronaut__arm-left1"></div>
-      <div class="astronaut__arm-left2"></div>
-      <div class="astronaut__arm-right1"></div>
-      <div class="astronaut__arm-right2"></div>
-      <div class="astronaut__arm-thumb-left"></div>
-      <div class="astronaut__arm-thumb-right"></div>
-      <div class="astronaut__leg-left"></div>
-      <div class="astronaut__leg-right"></div>
-      <div class="astronaut__foot-left"></div>
-      <div class="astronaut__foot-right"></div>
-      <div class="astronaut__wrist-left"></div>
-      <div class="astronaut__wrist-right"></div>
-
-      <div class="astronaut__cord">
-        <canvas id="cord" height="350px" width="500px"></canvas>
+      <div class="error">
+        <div class="error__title">404</div>
+        <div class="error__subtitle">...</div>
+        <div class="error__description">
+          It looks like you are on the wrong path
+        </div>
       </div>
 
-      <div class="astronaut__head">
-        <canvas id="visor" width="60px" height="60px"></canvas>
-        <div class="astronaut__head-visor-flare1"></div>
-        <div class="astronaut__head-visor-flare2"></div>
+      <div class="astronaut">
+        <div class="astronaut__backpack"></div>
+        <div class="astronaut__body"></div>
+        <div class="astronaut__body__chest"></div>
+        <div class="astronaut__arm-left1"></div>
+        <div class="astronaut__arm-left2"></div>
+        <div class="astronaut__arm-right1"></div>
+        <div class="astronaut__arm-right2"></div>
+        <div class="astronaut__arm-thumb-left"></div>
+        <div class="astronaut__arm-thumb-right"></div>
+        <div class="astronaut__leg-left"></div>
+        <div class="astronaut__leg-right"></div>
+        <div class="astronaut__foot-left"></div>
+        <div class="astronaut__foot-right"></div>
+        <div class="astronaut__wrist-left"></div>
+        <div class="astronaut__wrist-right"></div>
+
+        <div class="astronaut__cord">
+          <canvas id="cord" height="350px" width="500px"></canvas>
+        </div>
+
+        <div class="astronaut__head">
+          <canvas id="visor" width="60px" height="60px"></canvas>
+          <div class="astronaut__head-visor-flare1"></div>
+          <div class="astronaut__head-visor-flare2"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +50,7 @@
 
 <script>
 export default {
-  mounted: function() {
+  mounted: function () {
     function drawVisor() {
       const canvas = document.getElementById("visor")
       const ctx = canvas.getContext("2d")
@@ -125,20 +127,23 @@ export default {
 
     drawVisor()
     animate()
-  }
+  },
 }
 </script>
 
-<style lang="scss">
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
+<style scoped lang="scss">
+.black {
   background: linear-gradient(
     90deg,
     rgba(47, 54, 64, 1) 23%,
     rgba(24, 27, 32, 1) 100%
-  ) !important;
+  );
+  height: 100vh;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
   overflow: hidden;
 }
 

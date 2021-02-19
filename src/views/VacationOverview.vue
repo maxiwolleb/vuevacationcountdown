@@ -1,34 +1,33 @@
-<template>
-  <div>
-    <h1>Vacation Overview</h1>
-    <div id="vacationList" v-for="vacation in vacations" :key="vacation.id">
-      <router-link
-        class="link"
-        :to="{ name: 'VacationShow', params: { id: vacation.id } }"
-      >
-        Vacation {{ vacation.id }}
-      </router-link>
-    </div>
-  </div>
-</template>
+<template><div></div></template>
 
 <script>
 export default {
   data() {
     return {
       vacations: [
-        { id: "1", name: "test" },
-        { id: "2", name: "test2" }
-      ]
+        {
+          id: "1",
+          name: "Südafrika",
+          fromDate: "05.02.2020",
+          toDate: "08.02.2020",
+          pictureURL:
+            "https://images.unsplash.com/photo-1582129631380-fba8edcb5da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        },
+        { id: "2", name: "test2" },
+      ],
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 #vacationList {
-  .link {
-    color: #008000;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  .v-card {
+    margin: 1em;
   }
 }
 </style>
